@@ -19,8 +19,10 @@ def calcular_consumo_carros():
         consumo = float(input(f"Digite o consumo (km/l) do {modelo}: "))
 
         if consumo > 0:
+
           consumos.append(consumo)
           break
+
         else:
 
           print("O consumo deve ser um valor positivo.")
