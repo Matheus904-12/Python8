@@ -1,46 +1,73 @@
 import os
 os .system ("cls")
 
+print("Exercícios - String")
+
+print("5) Elaborar um programa que receba uma palavra e calcule quantas vogais (a, e, i, o, u) possui essa palvra. Depois o usuário deve digitar um caractere (vogal ou consoante) e o programa deve substituir todas as vogais da palvra por esse caractere. \n")
+
+conso = []
+vol = []
 palavra = []
 
-vogal = []
+pal = str(input("Digite uma palavra: \n")) #input
 
-consol = []
+tamanhoPAL = len(pal) #tamanho da palvra
 
-y = 0
+y = 0 #ponteiro
 
-palavra = input("Digite uma palavra: \n")
+for n in range(tamanhoPAL): #uma repetição para cada letra
+    letra = pal[y] #definindo as letras em palavra
 
-tamanho = len(palavra)
+    if letra != "a" and letra != "A" and letra != "E" and letra != "e" and letra != "I" and letra != "i" and letra != "O" and letra != "o" and letra != "U" and letra != "u": #conferindo se a letra é uma consoante
 
-for n in range(tamanho):
-    ponteiro = palavra[y]
-
-    palavra.append(ponteiro)
-
-    if ponteiro == "a" or ponteiro == "A" or ponteiro == "E" or ponteiro == "e" or ponteiro == "I" or ponteiro == "i" or ponteiro == "O" or ponteiro == "o" or ponteiro == "U" or ponteiro == "u":
-        vogal.append(ponteiro)
+        conso.append(letra) #se for consoante, adicione em consol
     else:
-        consol.append(ponteiro)
+        vol.append(letra) #se for vogal, aiciona em vogal
 
+    palavra.append(letra) #sempre será adicionada uma letra para palvra
     y = y + 1
+        
+tamanhoVol = len(vol) #quantidade de vogais
 
-vogalNum = len(vogal)
+print(f"{palavra} \n") #print da palavra 
 
-print(f"{vogalNum}")
+carac = str(input("Digite uma letra: \n")) #perguntando caractere
 
-carac = input("Digite um caractere (vogal ou consoante: \n)")
+caprichoV2 = len(carac) 
 
-palavra["a"] = carac
-palavra["A"] = carac
-palavra["E"] = carac
-palavra["e"] = carac
-palavra["I"] = carac
-palavra["e"] = carac
-palavra["O"] = carac
-palavra["o"] = carac
-palavra["U"] = carac
-palavra["u"] = carac
+while caprichoV2 > 1:
+    carac = str(input("Digite apenas UMA letra: \n"))
+    caprichoV2 = len(carac) #condição caso a palavra tenha mais de 1 caractere
+
+for n in range(tamanhoPAL):
+    if palavra[n] == "a":
+        palavra[n] = f"{carac}"
+
+    if palavra[n] == "e":
+        palavra[n] = f"{carac}"
+
+    if palavra[n] == "i":
+        palavra[n] = f"{carac}"
+
+    if palavra[n] == "o":
+        palavra[n] = f"{carac}"
+
+    if palavra[n] == "u":
+        palavra[n] = f"{carac}"
+
+    if palavra[n] == "A":
+        palavra[n] = f"{carac}"
+
+    if palavra[n] == "E":
+        palavra[n] = f"{carac}"
+
+    if palavra[n] == "I":
+        palavra[n] = f"{carac}"
+
+    if palavra[n] == "O":
+        palavra[n] = f"{carac}"
+
+    if palavra[n] == "U":
+        palavra[n] = f"{carac}"
 
 print(f"{palavra}")
-
